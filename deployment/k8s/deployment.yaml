@@ -1,0 +1,21 @@
+# deployment concept - tell k8s what we want to do (deploy 5 insatnses of my-app)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: my-app-image:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000

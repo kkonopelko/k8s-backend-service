@@ -1,0 +1,14 @@
+# manifest that tell us - if you meet any pod called my-app, please name all these pods as my-backend-service.
+# It will help route the traffic to these pods.
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-backend-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: NodePort
