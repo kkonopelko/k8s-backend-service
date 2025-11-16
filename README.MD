@@ -9,5 +9,5 @@ Simple backend service with Python FastApi for Kubernetes usage.
 
 ## Kubernetes commands
 - `kubectl get nodes`
-- `kubectl apply -f deployment.yaml` - deployed application
+- `kubectl apply -f deployment.yaml` - deploy application
 
